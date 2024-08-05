@@ -2,8 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+ 
 }
+
+
 
 .container {
   display: flex;
@@ -18,7 +20,7 @@
 }
 .input {
   height: 50px;
-  width: 550px;
+  width: 850px;
   font-size: 24px;
   border-radius: 10px;
   padding: 30px;
@@ -47,13 +49,14 @@
 .list-item {
   background-color: rgb(235, 234, 230);
   list-style: none;
-  padding: 20px;
-  width: 710px;
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   margin: 20px;
   font-size: 24px;
   border-radius: 20px;
+  width: 1024px; 
+  word-wrap: break-word;
 }
 .list-item button {
   font-size: 20px;
@@ -64,7 +67,22 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 15px;
 }
+
+.bgColorBtn{
+    background-color: #555;
+    color: aliceblue;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.blue {
+  background-color: rgb(78, 78, 78);
+}
+
 
 .delbtn,
 .editbtn {
