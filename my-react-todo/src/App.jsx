@@ -10,6 +10,8 @@ function App() {
   // ];
 
   const [todos , setTodos] = useState([])
+  
+  const [todoValue , setTodoValue] = useState('')
 
   function handleAddTodos(newTodo){
     const newTodosList = [...todos,newTodo] 
@@ -17,24 +19,34 @@ function App() {
   }
 
   function handleDeleteTodo(index){
-    const newTodosList = todos.filter((todo,todoIndex)=>{
+    const newTodosList = todos.filter((todo ,todoIndex)=>{
       return todoIndex !== index
     })
     setTodos(newTodosList)
   }
 
 
-  function handleEditTodo(){
-
+  function handleEditTodo(index){
+    const valueToBeEdited = todos[index]
+    setTodoValue(valueToBeEdited)
+    handleDeleteTodo(index)
   }
 
-  
 
   return (
     <>
     <main className="container">
-      <TodoInput handleAddTodos={handleAddTodos}/>
-      <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo}/>
+      <TodoInput 
+      todoValue={todoValue}
+      setTodoValue={setTodoValue}
+      handleAddTodos={handleAddTodos}
+      />
+
+      <TodoList 
+      todos={todos} 
+      handleDeleteTodo={handleDeleteTodo} 
+      handleEditTodo={handleEditTodo}
+      />
     </main>
     </>
     
